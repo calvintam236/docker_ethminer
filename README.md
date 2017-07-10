@@ -18,7 +18,7 @@ Run in background with GPU mining:
 $ docker run -d --name YOUR_CONTAINER_NAME calvintam236/ethminer -G -F YOUR_POOL/YOUR_EMAIL --disable-submit-hashrate
 ```
 
-Get minergate-cli options with:
+Get ethminer options with:
 
 ```console
 $ docker run --rm calvintam236/ethminer --help
