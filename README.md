@@ -1,6 +1,6 @@
 # What is ethminer?
 
-ethminer is the console miner provided by [Ethereum](https://www.ethereum.org/).
+ethminer is the console miner provided by [ethereum-mining](https://github.com/ethereum-mining/ethminer).
 
 ethminer supports Ethereum (ETH), and Ethereum Classic (ETC).
 
