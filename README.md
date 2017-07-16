@@ -9,13 +9,13 @@ ethminer supports Ethereum (ETH), and Ethereum Classic (ETC).
 Run in background with CPU mining:
 
 ```console
-$ docker run -d --name YOUR_CONTAINER_NAME calvintam236/ethminer -C -F YOUR_POOL_ADDRESS/YOUR_USERNAME --disable-submit-hashrate
+$ docker run -d --name YOUR_CONTAINER_NAME calvintam236/ethminer -C -F YOUR_POOL_ADDRESS/YOUR_USERNAME
 ```
 
 Run in background with GPU mining:
 
 ```console
-$ docker run -d --name YOUR_CONTAINER_NAME calvintam236/ethminer -G -F YOUR_POOL_ADDRESS/YOUR_USERNAME --disable-submit-hashrate
+$ docker run -d --name YOUR_CONTAINER_NAME calvintam236/ethminer -G -F YOUR_POOL_ADDRESS/YOUR_USERNAME
 ```
 
 Get ethminer options with:
