@@ -10,7 +10,9 @@ RUN apt-get update \
 WORKDIR /tmp
 RUN curl -L -O https://github.com/ethereum-mining/ethminer/releases/download/v0.11.0/ethminer-0.11.0-Linux.tar.gz \
     && tar -xvf ethminer-0.11.0-Linux.tar.gz \
+    && rm ethminer-0.11.0-Linux.tar.gz \
     && mv bin/ethminer /usr/local/bin/ethminer \
-    && rm -r bin
+    && chmod a+x /usr/local/bin/ethminer \
+    && rm -r bin/
 
 ENTRYPOINT ["ethminer"]
