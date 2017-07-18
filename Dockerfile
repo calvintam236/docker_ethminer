@@ -14,6 +14,8 @@ RUN apt-get update \
     && chmod a+x /usr/local/bin/ethminer \
     && rm -r bin/ \
     && apt-get -y remove ca-certificates curl \
-    && rm -r /var/lib/apt/lists/*
+    && apt-get -y autoremove \
+    && apt-get clean autoclean \
+    && rm -r /var/lib/{apt,dpkg,cache,log}/
 
 ENTRYPOINT ["ethminer"]
