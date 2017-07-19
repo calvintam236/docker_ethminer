@@ -6,16 +6,22 @@ ethminer supports Ethereum (ETH), and Ethereum Classic (ETC).
 
 # How to use this image
 
-Run in background with CPU mining:
+Run in background with AMD (OpenCL) GPU mining:
 
 ```console
-$ docker run -d --name YOUR_CONTAINER_NAME calvintam236/ethminer -C -F YOUR_POOL_ADDRESS/YOUR_USERNAME
+$ docker run -d --name YOUR_CONTAINER_NAME calvintam236/ethminer -G -F YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
 ```
 
-Run in background with GPU mining:
+Run in background with Nvidia (CUDA) GPU mining:
 
 ```console
-$ docker run -d --name YOUR_CONTAINER_NAME calvintam236/ethminer -G -F YOUR_POOL_ADDRESS/YOUR_USERNAME
+$ docker run -d --name YOUR_CONTAINER_NAME calvintam236/ethminer -U -F YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
+```
+
+Run in background with both AMD (OpenCL) and Nvidia (CUDA) GPUs mining:
+
+```console
+$ docker run -d --name YOUR_CONTAINER_NAME calvintam236/ethminer -X -F YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
 ```
 
 Get ethminer options with:
