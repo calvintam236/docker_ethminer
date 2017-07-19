@@ -1,12 +1,12 @@
 FROM ubuntu:16.04
 
 MAINTAINER calvintam236 <calvintam236@users.noreply.github.com>
-LABEL description="ethminer in Docker. Supports CPU & GPU mining."
+LABEL description="ethminer in Docker. Supports GPU mining."
 
 WORKDIR /tmp
 
 RUN apt-get update \
-    && apt-get -y --no-install-recommends install ca-certificates curl \
+    && apt-get -y --no-install-recommends install ca-certificates curl libidn11 \
     && curl -L -O https://github.com/ethereum-mining/ethminer/releases/download/v0.11.0/ethminer-0.11.0-Linux.tar.gz \
     && tar -xvf ethminer-0.11.0-Linux.tar.gz \
     && rm ethminer-0.11.0-Linux.tar.gz \
