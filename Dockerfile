@@ -13,7 +13,7 @@ RUN apt-get update \
     && mv bin/ethminer /usr/local/bin/ethminer \
     && chmod a+x /usr/local/bin/ethminer \
     && rm -r bin/ \
-    && apt-get -y remove ca-certificates curl \
+    && apt-get -y remove ca-certificates \
     && apt-get -y autoremove \
     && apt-get clean autoclean \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/
