@@ -6,7 +6,7 @@ LABEL description="ethminer in Docker. Supports GPU mining."
 WORKDIR /tmp
 
 RUN apt-get update \
-    && apt-get -y --no-install-recommends install ca-certificates curl libidn11 \
+    && apt-get -y --no-install-recommends install ca-certificates curl libidn11 libcurl3 \
     && curl -L -O https://github.com/ethereum-mining/ethminer/releases/download/v0.11.0/ethminer-0.11.0-Linux.tar.gz \
     && tar -xvf ethminer-0.11.0-Linux.tar.gz \
     && rm ethminer-0.11.0-Linux.tar.gz \
