@@ -24,7 +24,7 @@ Run in background with both AMD (OpenCL) and Nvidia (CUDA) GPUs mining:
 $ docker run -d --device /dev/dri:/dev/dri --name YOUR_CONTAINER_NAME calvintam236/ethminer -X -S YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
 ```
 
-Get ethminer options with:
+Get `ethminer` options with:
 
 ```console
 $ docker run --rm calvintam236/ethminer --help
