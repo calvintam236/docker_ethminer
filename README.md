@@ -21,7 +21,7 @@ $ docker run -d --device /dev/dri:/dev/dri --name YOUR_CONTAINER_NAME calvintam2
 Run in background with both AMD (OpenCL) and Nvidia (CUDA) GPUs mining:
 
 ```console
-$ docker run -d --device /dev/dri:/dev/dri --name YOUR_CONTAINER_NAME calvintam236/ethminer -X -S YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
+$ docker run -d --device /dev/dri:/dev/dri --device /dev/dri:/dev/dri --device=/dev/nvidiactl --device=/dev/nvidia-uvm --device=/dev/nvidia0 --name YOUR_CONTAINER_NAME calvintam236/ethminer -X -S YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
 ```
 
 Get `ethminer` options with:
