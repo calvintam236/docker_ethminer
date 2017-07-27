@@ -4,30 +4,18 @@ ethminer is the console miner provided by [ethereum-mining](https://github.com/e
 
 ethminer supports Ethereum (ETH), and Ethereum Classic (ETC).
 
-# How to use this image
+# How to use this image [AMDGPU-PRO version]
 
-Run in background with AMD (OpenCL) GPU mining:
-
-```console
-$ docker run -d --device /dev/dri:/dev/dri --name YOUR_CONTAINER_NAME calvintam236/ethminer -G -S YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
-```
-
-Run in background with Nvidia (CUDA) GPU mining:
+Run in background:
 
 ```console
-$ docker run -d --device /dev/dri:/dev/dri --name YOUR_CONTAINER_NAME calvintam236/ethminer -U -S YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
-```
-
-Run in background with both AMD (OpenCL) and Nvidia (CUDA) GPUs mining:
-
-```console
-$ docker run -d --device /dev/dri:/dev/dri --device /dev/dri:/dev/dri --device=/dev/nvidiactl --device=/dev/nvidia-uvm --device=/dev/nvidia0 --name YOUR_CONTAINER_NAME calvintam236/ethminer -X -S YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
+$ docker run -d --device /dev/dri:/dev/dri --name YOUR_CONTAINER_NAME calvintam236/ethminer:amdgpu-pro -G -S YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
 ```
 
 Get `ethminer` options with:
 
 ```console
-$ docker run --rm calvintam236/ethminer --help
+$ docker run --rm calvintam236/ethminer:amdgpu-pro --help
 ```
 
 Fetch logs of a container:
