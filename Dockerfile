@@ -1,4 +1,4 @@
-FROM calvintam236/ubuntu.amdgpu-pro
+FROM calvintam236/ubuntu:amdgpu-pro
 
 MAINTAINER calvintam236 <calvintam236@users.noreply.github.com>
 LABEL description="ethminer in Docker. Supports GPU mining."
