@@ -12,10 +12,15 @@ RUN apt-get update \
     && rm ethminer-0.11.0-Linux.tar.gz \
     && mv bin/ethminer /usr/local/bin/ethminer \
     && chmod a+x /usr/local/bin/ethminer \
-    && rm -r bin/ \
+    && rm -r bin \
+    && export GPU_FORCE_64BIT_PTR=0 \
+    && export GPU_MAX_HEAP_SIZE=100 \
+    && export GPU_USE_SYNC_OBJECTS=1 \
+    && export GPU_MAX_ALLOC_PERCENT=100 \
+    && export GPU_SINGLE_ALLOC_PERCENT=100 \
     && apt-get -y remove ca-certificates curl \
     && apt-get -y autoremove \
     && apt-get clean autoclean \
-    && rm -rf /var/lib/{apt,dpkg,cache,log}/
+    && rm -rf /var/lib/{apt,dpkg,cache,log}
 
 ENTRYPOINT ["ethminer"]
