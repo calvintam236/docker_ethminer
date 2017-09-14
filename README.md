@@ -4,18 +4,18 @@ ethminer is the console miner provided by [ethereum-mining](https://github.com/e
 
 ethminer supports Ethereum (ETH), and Ethereum Classic (ETC).
 
-# How to use this image [AMDGPU-PRO version]
+# How to use this image [AMD version]
 
 Run in background:
 
 ```console
-$ docker run -d --device /dev/dri:/dev/dri --name YOUR_CONTAINER_NAME calvintam236/ethminer:amdgpu-pro -G -S YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
+$ docker run -d --device /dev/dri:/dev/dri --name YOUR_CONTAINER_NAME calvintam236/ethminer:amd -G -S YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
 ```
 
 Get `ethminer` options with:
 
 ```console
-$ docker run --rm calvintam236/ethminer:amdgpu-pro --help
+$ docker run --rm calvintam236/ethminer:amd --help
 ```
 
 Fetch logs of a container:
