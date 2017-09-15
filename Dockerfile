@@ -1,4 +1,4 @@
-FROM calvintam236/ubuntu:amd
+FROM calvintam236/ubuntu:nvidia
 
 MAINTAINER calvintam236 <calvintam236@users.noreply.github.com>
 LABEL description="ethminer in Docker. Supports GPU mining."
@@ -24,3 +24,4 @@ RUN apt-get update \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
 ENTRYPOINT ["ethminer"]
+CMD ["--help"]
