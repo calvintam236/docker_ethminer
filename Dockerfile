@@ -1,4 +1,4 @@
-FROM calvintam236/ubuntu:nvidia
+FROM calvintam236/ubuntu:amd
 
 MAINTAINER calvintam236 <calvintam236@users.noreply.github.com>
 LABEL description="ethminer in Docker. Supports GPU mining."
