@@ -1,4 +1,4 @@
-FROM calvintam236/ubuntu:amd
+FROM calvintam236/ubuntu:nvidia
 
 MAINTAINER calvintam236 <calvintam236@users.noreply.github.com>
 LABEL description="ethminer in Docker. Supports GPU mining."
@@ -19,7 +19,6 @@ RUN apt-get update \
     && export GPU_MAX_ALLOC_PERCENT=100 \
     && export GPU_SINGLE_ALLOC_PERCENT=100 \
     && apt-get -y remove ca-certificates curl \
-    && apt-get -y autoremove \
     && apt-get clean autoclean \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
