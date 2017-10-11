@@ -13,11 +13,6 @@ RUN apt-get update \
     && mv bin/ethminer /usr/local/bin/ethminer \
     && chmod a+x /usr/local/bin/ethminer \
     && rm -r bin \
-    && export GPU_FORCE_64BIT_PTR=0 \
-    && export GPU_MAX_HEAP_SIZE=100 \
-    && export GPU_USE_SYNC_OBJECTS=1 \
-    && export GPU_MAX_ALLOC_PERCENT=100 \
-    && export GPU_SINGLE_ALLOC_PERCENT=100 \
     && apt-get -y remove ca-certificates curl \
     && apt-get clean autoclean \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
