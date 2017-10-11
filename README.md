@@ -9,7 +9,7 @@ ethminer supports Ethereum (ETH), and Ethereum Classic (ETC).
 Run in background:
 
 ```console
-$ docker run -d --device /dev/dri:/dev/dri --name YOUR_CONTAINER_NAME calvintam236/ethminer:amd -G -S YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
+$ docker run -d --device /dev/kfd --device /dev/dri --name YOUR_CONTAINER_NAME calvintam236/ethminer:amd -G -S YOUR_POOL_ADDRESS -O YOUR_USERNAME.YOUR_WORKER_NAME:YOUR_WORKER_PASSWORD
 ```
 
 Get `ethminer` options with:
