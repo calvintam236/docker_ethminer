@@ -1,4 +1,4 @@
-FROM calvintam236/ubuntu:mesa
+FROM calvintam236/ubuntu:rocm
 
 LABEL maintainer="calvintam236"
 LABEL description="ethminer in Docker. Supports GPU mining."
