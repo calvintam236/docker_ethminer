@@ -8,8 +8,8 @@ WORKDIR /tmp
 RUN apt-get update \
     && apt-get -y --no-install-recommends install ca-certificates curl libidn11 \
     && curl -L -O https://github.com/ethereum-mining/ethminer/releases/download/v0.16.0/ethminer-0.16.0-linux-x86_64.tar.gz \
-    && tar -xvf ethminer-0.16.0-Linux.tar.gz \
-    && rm ethminer-0.16.0-Linux.tar.gz \
+    && tar -xvf ethminer-0.16.0-linux-x86_64.tar.gz \
+    && rm ethminer-0.16.0-linux-x86_64.tar.gz \
     && mv bin/ethminer /usr/local/bin/ethminer \
     && chmod a+x /usr/local/bin/ethminer \
     && rm -r bin \
