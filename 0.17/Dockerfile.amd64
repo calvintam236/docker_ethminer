@@ -1,0 +1,30 @@
+FROM ubuntu:bionic
+
+LABEL maintainer="calvintam236"
+LABEL description="ethminer in Docker. Supports GPU mining."
+
+WORKDIR /tmp/
+
+ADD \
+http://repo.radeon.com/rocm/apt/debian/rocm.gpg.key \
+.
+
+ADD \
+https://github.com/ethereum-mining/ethminer/releases/download/v0.17.1/ethminer-0.17.1-linux-x86_64.tar.gz \
+.
+
+RUN \
+apt-get update \
+&& apt-get -y --no-install-recommends install gnupg2 \
+&& apt-key add rocm.gpg.key \
+&& echo 'deb [arch=amd64] http://repo.radeon.com/rocm/apt/debian/ xenial main' > /etc/apt/sources.list.d/rocm.list \
+&& apt-get update \
+&& apt-get -y --no-install-recommends install libnuma-dev rocm-dev \
+&& rm -rf /var/lib/apt/lists/* \
+&& tar -xvf ethminer-0.17.1-linux-x86_64.tar.gz \
+&& mv bin/ethminer /usr/local/bin/ethminer \
+&& chmod +x /usr/local/bin/ethminer \
+&& rm -r *
+
+ENTRYPOINT ["ethminer"]
+CMD ["-h"]
