@@ -17,7 +17,7 @@ $ docker build . --file YOUR_VERSION/Dockerfile.YOUR_ARCH --tag calvintam236/eth
 
 $ docker build . --file YOUR_VERSION/Dockerfile.YOUR_ARCH --tag calvintam236/ethminer:mesa-YOUR_VERSION
 
-$ curl -L -O --referer https://www.amd.com https://drivers.amd.com/drivers/linux/amdgpu-pro-19.20-812932-ubuntu-18.04.tar.xz
+$ curl -L -O --referer https://www.amd.com https://drivers.amd.com/drivers/linux/amdgpu-pro-19.30-855429-ubuntu-18.04.tar.xz
 $ docker build . --file YOUR_VERSION/Dockerfile.YOUR_ARCH --tag calvintam236/ethminer:amdgpu-YOUR_VERSION
 
 $ docker build . --file YOUR_VERSION/Dockerfile.YOUR_ARCH --tag calvintam236/ethminer:cuda-YOUR_VERSION
