@@ -1,0 +1,22 @@
+FROM ubuntu:bionic
+
+LABEL maintainer="calvintam236"
+LABEL description="ethminer in Docker. Supports GPU mining."
+
+WORKDIR /tmp/
+
+ADD \
+https://github.com/ethereum-mining/ethminer/releases/download/v0.18.0/ethminer-0.18.0-cuda-9-linux-x86_64.tar.gz \
+.
+
+RUN \
+apt-get update \
+&& apt-get -y --no-install-recommends install mesa-opencl-icd ocl-icd-opencl-dev \
+&& rm -rf /var/lib/apt/lists/* \
+&& tar -xvf ethminer-0.18.0-cuda-9-linux-x86_64.tar.gz \
+&& mv bin/ethminer /usr/local/bin/ethminer \
+&& chmod +x /usr/local/bin/ethminer \
+&& rm -r *
+
+ENTRYPOINT ["ethminer"]
+CMD ["-h"]
