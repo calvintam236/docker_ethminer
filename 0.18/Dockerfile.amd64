@@ -6,11 +6,11 @@ LABEL description="ethminer in Docker. Supports GPU mining."
 WORKDIR /tmp/
 
 ADD \
-https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub \
+https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin \
 .
 
 ADD \
-https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.1.168-1_amd64.deb \
+https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub \
 .
 
 ADD \
@@ -18,12 +18,13 @@ https://github.com/ethereum-mining/ethminer/releases/download/v0.18.0/ethminer-0
 .
 
 RUN \
-apt-get update \
-&& apt-get -y --no-install-recommends install gnupg2 \
-&& apt-key add 7fa2af80.pub \
-&& apt-get install ./cuda-repo-ubuntu1804_10.1.168-1_amd64.deb \
+mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600 \
 && apt-get update \
-&& DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install cuda-runtime-10-1 \
+&& apt-get -y --no-install-recommends install gnupg2 software-properties-common \
+&& apt-key add 7fa2af80.pub \
+&& add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ /" \
+&& apt-get update \
+&& DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install cuda-runtime-10-2 \
 && rm -rf /var/lib/apt/lists/* \
 && tar -xvf ethminer-0.18.0-cuda-9-linux-x86_64.tar.gz \
 && mv bin/ethminer /usr/local/bin/ethminer \
