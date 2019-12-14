@@ -32,4 +32,4 @@ mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600 \
 && rm -r *
 
 ENTRYPOINT ["ethminer"]
-CMD ["--help"]
+CMD ["-h"]

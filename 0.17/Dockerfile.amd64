@@ -31,4 +31,4 @@ apt-get update \
 && rm -r *
 
 ENTRYPOINT ["ethminer"]
-CMD ["--help"]
+CMD ["-h"]
