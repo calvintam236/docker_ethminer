@@ -22,4 +22,4 @@ RUN \
 && rm -r *
 
 ENTRYPOINT ["ethminer"]
-CMD ["--help"]
+CMD ["-h"]
