@@ -6,7 +6,7 @@ LABEL description="ethminer in Docker. Supports GPU mining."
 WORKDIR /tmp/
 
 ADD \
-amdgpu-pro-19.30-855429-ubuntu-18.04.tar.xz \
+amdgpu-pro-19.30-934563-ubuntu-18.04.tar.xz \
 .
 
 ADD \
@@ -14,7 +14,7 @@ https://github.com/ethereum-mining/ethminer/releases/download/v0.17.1/ethminer-0
 .
 
 RUN \
-./amdgpu-pro-19.30-855429-ubuntu-18.04/amdgpu-install -y --headless --opencl=legacy,pal \
+./amdgpu-pro-19.30-934563-ubuntu-18.04/amdgpu-install -y --headless --opencl=legacy,pal \
 && rm -rf /var/lib/apt/lists/* \
 && tar -xvf ethminer-0.17.1-linux-x86_64.tar.gz \
 && mv bin/ethminer /usr/local/bin/ethminer \
