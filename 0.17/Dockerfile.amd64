@@ -27,7 +27,7 @@ mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600 \
 && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install cuda-runtime-10-2 \
 && rm -rf /var/lib/apt/lists/* \
 && tar -xvf ethminer-0.17.1-linux-x86_64.tar.gz \
-&& mv bin/ethminer /usr/local/bin/ethminer \
+&& mv bin/ethminer /usr/local/bin/ \
 && chmod +x /usr/local/bin/ethminer \
 && rm -r *
 
