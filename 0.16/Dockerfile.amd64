@@ -17,9 +17,9 @@ RUN \
 ./amdgpu-pro-19.30-934563-ubuntu-18.04/amdgpu-install -y --headless --opencl=legacy,pal \
 && rm -rf /var/lib/apt/lists/* \
 && tar -xvf ethminer-0.16.2-linux-x86_64.tar.gz \
-&& mv bin/ethminer /usr/local/bin/ \
-&& chmod +x /usr/local/bin/ethminer \
+&& mv bin/* /usr/local/ethminer/ \
+&& chmod +x /usr/local/ethminer/ethminer \
 && rm -r *
 
-ENTRYPOINT ["ethminer"]
+ENTRYPOINT ["/usr/local/ethminer/ethminer"]
 CMD ["-h"]
