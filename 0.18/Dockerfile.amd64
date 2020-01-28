@@ -14,9 +14,10 @@ apt-get update \
 && apt-get -y --no-install-recommends install mesa-opencl-icd ocl-icd-opencl-dev \
 && rm -rf /var/lib/apt/lists/* \
 && tar -xvf ethminer-0.18.0-cuda-9-linux-x86_64.tar.gz \
-&& mv bin/ethminer /usr/local/bin/ \
-&& chmod +x /usr/local/bin/ethminer \
+&& mkdir /usr/local/ethminer/ \
+&& mv bin/* /usr/local/ethminer/ \
+&& chmod +x /usr/local/ethminer/ethminer \
 && rm -r *
 
-ENTRYPOINT ["ethminer"]
+ENTRYPOINT ["/usr/local/ethminer/ethminer"]
 CMD ["-h"]
