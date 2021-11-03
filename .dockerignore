@@ -1,6 +1,8 @@
-.drone.yml
+# git
 .git
+.gitattributes
 .gitignore
-Dockerfile
+
+# Common
 README.md
-docker-compose.yml
+CHANGELOG.md
